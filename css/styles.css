@@ -4,7 +4,7 @@ body {
   position: relative;
   margin: 0px;
   font-size: 12px;
-  padding: 0px;
+  padding: 50px 0 0 0;
 }
 
 .page-content > .row {
@@ -584,11 +584,14 @@ body {
 
 /* Mobile phones */
 @media (max-width: 480px){
-
+  body {
+    padding-top:215px;
+  }
 }
 
 /* Tablets */
 @media (max-width: 767px){
+  body {padding-top:215px;}
    .container{
       width:100%;
    }
@@ -612,6 +615,7 @@ body {
 /* Desktop */
 
 @media (max-width: 991px){
+  body {padding-top:215px;}
    .header{
       height:auto;
       padding:15px 0px;

@@ -1,0 +1,643 @@
+@import 'incl/mixins';
+
+$offerWhite:      rgba(247,247,247,1);
+$darkBlue:        rgba(44,55,66,1);
+$whitey:          rgba(255,255,255,1);
+$lightGray:       rgba(238,238,238,1);
+$miderGray:       rgba(136,136,136,1);
+$midGray:         rgba(170,170,170,1);
+$blacky:          rgba(0,0,0,1);
+$lightBlacky:     rgba(33,33,33,1);
+$lightTeal:       rgba(29,193,219,1);
+$teal:            rgba(15,166,188,1);
+$offWhite:        rgba(243,243,243,1);
+$darkGray:        rgba(102,102,102,1);
+$lighterDarkGray: rgba(153,153,153,1);
+$offestWhite:     rgba(252,252,252,1);
+$grayWhite:       rgba(221,221,221,1);
+$paleWhite:       rgba(245,245,245,1);
+$brownGray:       rgba(85,85,85,1);
+$palerWhite:      rgba(239,240,243,1);
+$lighterBlacky:   rgba(34,34,34,1);
+$skyBlue:         rgba(40,160,229,1);
+$purpleBlue:      rgba(87,115,172,1);
+$paleGray:        rgba(178,191,199,1);
+$matteBlue:       rgba(104,135,196,1);
+$royalBlue:       rgba(57,89,159,1);
+$matteRoyalBlue:  rgba(69,102,169,1);
+$palerGray:       rgba(226,226,228,1);
+$turquoise:       rgba(15,166,188,1);
+$lightTurquoise:  rgba(22,203,230,1);
+$darkestGray:     rgba(17,17,17,1);
+$flattRoyalBlue:  rgba(59,72,104,1);
+
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: $offerWhite;
+  position: relative;
+  margin: 0px;
+  font-size: 12px;
+  padding: 4.167em 0 0 0;
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.page-content > .row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  margin-top: 2.5em;
+}
+
+/* Footer */
+
+footer {
+  background-color: $darkBlue;
+  box-shadow: inset 0 0 0.250em $darkestGray;
+  color: $whitey;
+  font-size: 1.167em;
+  line-height: 2.083em;
+  padding: 0.833em 0;
+  bottom: 0;
+  a {
+    color: $lightGray;
+    border-bottom: 0.083em dotted $miderGray;
+    &:hover {
+      color: $midGray;
+      border: 0;
+    }
+  }
+  hr {
+    margin:0.833em 0 0.833em 0;
+    +border(0.083em solid $lightBlacky);
+    border-left:none;
+    border-right:none;
+  }
+  .copy {
+    font-size: 1.083em;
+    margin: 1.250em 0;
+  }
+}
+
+/* Logo & Navigation */
+
+.header {
+  height: 4.167em;
+  background-color: $darkBlue;
+  .logo h1 {
+    font-size: 2.500em;
+    margin: 0;
+    padding: 0.833em 0;
+    a {
+      color: $whitey;
+      font-family: 'Open Sans Condensed', sans-serif;
+      &:hover {
+        color: $whitey;
+        border: 0;
+      }
+    }
+  }
+  .form {
+    margin-top: 0.833em;
+    width: 100%;
+    max-width: 25.000em;
+    margin: 0.833em auto;
+  }
+  .navbar {
+    * {
+      box-shadow: none !important;
+    }
+    .label {
+      font-size: 1em;
+      padding: 0.333em 0.667em;
+      margin: 0 0.167em;
+      border-radius: 1.250em !important;
+    }
+    background: none !important;
+    border: 0 !important;
+    i {
+      margin-right: 0.250em;
+    }
+    .nav > li > a {
+      color: $whitey !important;
+      font-size: 1.083em !important;
+      border-bottom: 0 !important;
+      margin-top: 0 !important;
+      font-weight: bold;
+    }
+  }
+  .navbar-nav > .open > a {
+    background: none !important;
+    &:hover, &:focus {
+      background: none !important;
+    }
+  }
+  .navbar-collapse {
+    border: 0 !important;
+  }
+  .navbar-header {
+    width: 3.583em;
+    margin: 0 auto;
+    button {
+      color: $whitey !important;
+      padding: 0.417em 0.833em;
+    }
+  }
+  .navbar-toggle {
+    background-color: $lightTeal !important;
+    border: 0.083em solid $teal !important;
+    &:hover, &:focus {
+      background-color: $teal !important;
+      border: 0.083em solid $teal !important;
+    }
+  }
+  .dropdown-menu {
+    border-radius: 0.500em !important;
+    background: $whitey !important;
+    li {
+      font-size: 1.083em;
+      padding: 0.500em 1.250em;
+      border-bottom: 0.083em dashed $offWhite;
+      a {
+        color: $miderGray;
+        padding-left: 0 !important;
+      }
+      &:last-child {
+        border: 0;
+      }
+      a:hover {
+        background: none !important;
+        color: $darkGray !important;
+        border: 0 !important;
+      }
+    }
+  }
+  .dropdown-big {
+    min-width: 25em;
+    .dropdown-head,.dropdown-foot {
+      padding: 0.583em 1.250em;
+      background: $offestWhite;
+      border-bottom: 0.083em solid $grayWhite;
+      margin-top: -0.417em;
+      border-top-left-radius: 0.417em;
+      border-top-right-radius: 0.417em;
+    }
+    .dropdown-title {
+      font-size: 1.083em;
+      font-weight: bold;
+      color: $lighterDarkGray;
+    }
+    .dropdown-body {
+      background: $whitey;
+    }
+    .dropdown-foot {
+      font-size: 1em;
+      a {
+        color: $miderGray;
+        &:hover {
+          color: $brownGray;
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+  .navbar-nav {
+    .caret {
+      border-top-color: $whitey !important;
+      border-bottom-color: $whitey !important;
+    }
+    > .open > a {
+      .caret, &:hover .caret, &:focus .caret {
+        border-top-color: $whitey !important;
+        border-bottom-color: $whitey !important;
+      }
+    }
+  }
+}
+
+/* Sidebar navigation */
+
+.content-box {
+  margin-bottom: 2.500em;
+  background: $whitey;
+  border-radius: 0.833em;
+  padding: 0.833em;
+  +border(0.083em solid $lightGray, 0.167em solid $lightGray, 0.167em solid $lightGray, 0.083em solid $lightGray);
+}
+
+.content-box-large {
+  margin-bottom: 2.500em;
+  background: $whitey;
+  border-radius: 0.833em;
+  padding: 0.833em;
+  +border(0.083em solid $lightGray, 0.167em solid $lightGray, 0.167em solid $lightGray, 0.083em solid $lightGray);
+  padding: 1.667em;
+}
+
+.box-with-header {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.content-box-header {
+  min-height: 3.333em;
+  font-size: 1.333em;
+  background: $paleWhite;
+  border-top-left-radius: 0.417em;
+  border-top-right-radius: 0.417em;
+  padding: 0.833em;
+  +border(0.083em solid $lightGray, 0.167em solid $lightGray);
+  border-bottom:none;
+  &:after {
+    clear: both;
+  }
+}
+
+.sidebar {
+  ul.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin: 0;
+      padding: 0;
+      display: none;
+    }
+  }
+  .nav {
+    li {
+      &.open ul {
+        display: block;
+      }
+      a:hover, &.current > a {
+        background: $whitey;
+        color: $brownGray;
+        border-bottom: 0;
+      }
+      &.open > a {
+        background: $whitey;
+        color: $brownGray;
+        border-bottom: 0.083em dashed $lightGray;
+      }
+    }
+    > li {
+      margin: 0;
+      border-bottom: 0.083em dashed $lightGray;
+      &:last-child {
+        border-bottom: 0;
+      }
+      li {
+        margin: 0;
+        a {
+          padding-left: 2.083em;
+        }
+      }
+      > {
+        a {
+          font-size: 1.167em;
+          line-height: 1.667em;
+          padding: 1.250em;
+          color: $lighterDarkGray;
+          display: block;
+          font-weight: bold;
+          background: none;
+          border-top: none;
+          font-weight: bold;
+          > i {
+            margin-right: 0.417em;
+          }
+        }
+        ul > li {
+          > a {
+            font-size: 1.083em;
+            line-height: 1.667em;
+            padding: 0.667em 0.833em 0.667em 3.333em;
+            color: $lighterDarkGray;
+            background: $whitey;
+            display: block;
+            border-top: 0;
+            font-weight: bold;
+          }
+          &.active > a {
+            background: $whitey;
+            border-top: 0;
+            color: $brownGray;
+          }
+          > a:hover {
+            background: $whitey;
+            color: $brownGray;
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+    a {
+      .caret {
+        float: right;
+        width: 0;
+        height: 0;
+        display: inline-block;
+        vertical-align: top;
+        +border(0.333em solid $midGray);
+        border-bottom:none;
+        content: "";
+        margin:0.667em 0 0 0.167em;
+      }
+      &:hover .caret {
+        border-top-color: $midGray;
+      }
+    }
+    li.open > a {
+      > .caret {
+        +border(0.333em solid $midGray);
+        border-top:none;
+      }
+      &:hover > .caret {
+        border-bottom-color: $midGray;
+      }
+    }
+  }
+}
+
+.login-bg {
+  background: rgba(255, 255, 255, 0);
+  background: linear-gradient(top,rgba(255,255,255,0.3), rgba(255,255,255,0));
+  background-color: $palerWhite;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+body {
+  background-color: $palerWhite;
+}
+
+/** Login & Signup **/
+
+.login-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  .box {
+    margin: 0 auto;
+    padding: 2.500em 0;
+    float: none;
+    @include css3(box-shadow,rgba(0, 0, 0, 0.4) 0 0.083em 0.250em, rgba(0, 0, 0, 0.35) 0 0 0.083em);
+    background: $whitey;
+    @include css3(border-radius,0.500em);
+    .content-wrap {
+      width: 82%;
+      margin: 0 auto;
+    }
+    h6 {
+      text-transform: uppercase;
+      margin-bottom: 2.917em;
+      font-size: 1.500em;
+      font-weight: 600;
+    }
+    input {
+      &[type="text"], &[type="password"] {
+        font-size: 1.250em;
+        height: 3.333em;
+        margin-bottom: 0.833em;
+        border-color: $paleGray;
+        padding-left: 1em;
+      }
+      &[type="text"]:focus {
+        border: 0.083em solid $skyBlue;
+        outline: none;
+        @include css3(box-shadow,inset 0 0.083em 0.167em $grayWhite,0px 0 0.417em $skyBlue);
+      }
+      &[type="password"] {
+        &:focus {
+          border: 0.083em solid $skyBlue;
+          outline: none;
+          @include css3(box-shadow,inset 0 0.083em 0.167em $grayWhite,0px 0 0.417em $skyBlue);
+        }
+        margin-bottom: 0.833em;
+      }
+    }
+    .action {
+      position: relative;
+      top: 2.500em;
+      padding: 1.250em 0;
+    }
+    .signup {
+      text-transform: uppercase;
+      font-size: 1.083em;
+      padding: 0.583em 2.083em;
+      border-radius: 0.417em;
+    }
+  }
+  .already {
+    margin: 0 auto;
+    float: none;
+    text-align: center;
+    font-size: 1.083em;
+    margin-top: 2.500em;
+    p {
+      display: inline-block;
+      color: $lighterBlacky;
+    }
+    a {
+      color: $lighterBlacky;
+      margin-left: 0.583em;
+      border-bottom: 0.083em solid;
+      &:hover {
+        color: $blacky;
+        border-bottom-color: $blacky;
+      }
+    }
+  }
+  .box {
+    .social {
+      margin: 0 auto;
+      width: 90%;
+      a.face_login {
+        background: $matteBlue;
+        background: linear-gradient(top, $matteBlue 0%, $matteRoyalBlue 100%);
+        +border(0.083em solid $flattRoyalBlue);
+        border-radius:0.250em;
+        display: inline-block;
+        height: 3.083em;
+        overflow: hidden;
+        width: 99%;
+        text-decoration: none !important;
+        &:hover {
+          background: $matteBlue;
+          background: linear-gradient(top, $matteBlue 0%, $purple 100%);
+        }
+        span {
+          &.face_icon {
+            background-color: $royalBlue;
+            border-radius:0.250em 0 0 0.250em;
+            float: left;
+            height: 3.083em;
+            text-align: center;
+            width: 4.250em;
+            img {
+              margin-top: 0.417em;
+            }
+          }
+          &.text {
+            color: $whitey;
+            float: left;
+            font-size: 1.250em;
+            font-weight: bold;
+            margin: 0.500em 0 0 2.083em;
+            text-shadow: 0.083em 0.083em 0 $royalBlue;
+          }
+        }
+      }
+    }
+    .division {
+      display: inline-block;
+      margin: 1.417em 0 1.917em;
+      position: relative;
+      text-align: center;
+      width: 100%;
+      hr {
+        border-color: $palerGray;
+        border-width: 0.083em;
+        margin: 0;
+        position: absolute;
+        width: 40%;
+        &.left {
+          top: 1.083em;
+        }
+        &.right {
+          bottom: 0.500em;
+          right: 0;
+        }
+      }
+      span {
+        color: $darkGray;
+        font-size: 1.500em;
+      }
+    }
+  }
+}
+
+.panel-heading > .panel-title, .content-box-header .panel-title {
+  float: left;
+  padding: 0.833em 1.250em;
+  padding-top: 0;
+}
+
+.panel-heading > .panel-title > *, .content-box-header .panel-title > * {
+  margin: 0;
+}
+
+.panel-heading > .panel-title > span, .content-box-header .panel-title > span {
+  font-weight: normal;
+}
+
+.panel-heading > .panel-options, .content-box-header .panel-options {
+  float: right;
+  padding-right: 1.250em;
+}
+
+.panel-heading > .panel-options > a, .content-box-header .panel-options > a {
+  margin-top: 0.833em;
+}
+
+.panel-body {
+  clear: both;
+}
+
+/* Responsive CSS */
+
+/* Mobile phones */
+@media (max-width: 40.000em) {
+  body {
+    padding-top: 17.917em;
+  }
+}
+
+/* Tablets */
+@media (max-width: 63.917em) {
+  body {
+    padding-top: 17.917em;
+  }
+  .container {
+    width: 100%;
+  }
+  .header {
+    height: auto;
+    padding: 1.250em 0;
+    .logo {
+      text-align: center;
+      padding-bottom: 0.833em;
+    }
+    .navbar .nav > li > a:hover {
+      background: $turquoise;
+      border-radius: 0.417em;
+    }
+  }
+  .navbar-toggle {
+    margin-right: 0 !important;
+  }
+}
+
+/* Desktop */
+
+@media (max-width: 82.583em) {
+  body {
+    padding-top: 17.917em;
+  }
+  .header {
+    height: auto;
+    padding: 1.250em 0;
+    .logo {
+      text-align: center;
+      padding-bottom: 0.833em;
+    }
+    .form {
+      margin: 0.833em auto;
+    }
+  }
+  .sidebar, content-box {
+    margin-bottom: 2.500em;
+    width: 100%;
+    float: none;
+    position: relative;
+  }
+  .mainy {
+    margin-left: 0;
+  }
+  .sidebar-dropdown {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom:0.833em;
+    border-bottom: 0.083em dashed $lightGray;
+    padding-bottom: 0.833em;
+    a {
+      color: $whitey;
+      background: $lightTurquoise;
+      display: block;
+      padding: 0.500em 1em;
+      border-bottom: 0;
+      box-shadow: 0 0 0.083em $turquoise;
+      border-radius: 0.830em;
+      &:hover {
+        color: $whitey;
+        background: $lightTurquoise;
+        display: block;
+        padding: 0.500em 1em;
+        border-bottom: 0;
+        box-shadow: 0 0 0.083em $turquoise;
+        border-radius: 0.830em;
+      }
+    }
+  }
+}
