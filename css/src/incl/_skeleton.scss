@@ -1,0 +1,69 @@
+/* Theme colors */
+
+/* WHITE */
+$offWhite: 			rgba(247,247,247,1); //#f7f7f7
+$offerWhite:		rgba(243,243,243,1); //#f3f3f3
+$paleWhite: 		rgba(239,240,243,1); //#eff0f3
+$palerWhite:		rgba(252,252,252,1); //#fcfcfc
+$almostWhite:		rgba(253,253,253,1); //#f5f5f5
+$white:				rgba(255,255,255,1); //#ffffff
+$clearWhite:		rgba(255,255,255,0); //#ffffff 0 alpha
+$transpWhite:		rgba(255,255,255,.3); //#ffffff 30% alpha
+
+/* GRAY */
+$blueLightGray:		rgba(178,191,199,1); //#b2bfc7
+$lightGray:			rgba(238,238,238,1); //#eeeeee
+$skyGray:			rgba(226,226,226,1); //#E2E2E4
+$paleGray:			rgba(221,221,221,1); //#dddddd
+$palerGray:			rgba(240,240,240,1); //#cccccc
+$middleGray:		rgba(170,170,170,1); //#aaaaaa
+$midGray:			rgba(153,153,153,1); //#999999
+$midistGray:		rgba(136,136,136,1); //#888888
+$midDarkGray:		rgba(102,102,102,1); //#666666
+$midDarkerGray:		rgba(85,85,85,1); 	 //#555555
+$darkGray:			rgba(51,51,51,1);    //#333333
+$darkerGray:		rgba(34,34,34,1);    //#222222
+
+
+
+/* BLUE */
+$darkBlue:			rgba(44,55,66,1); //#2c3742
+$royalBlue:			rgba(57,89,159,1);   //#39599F
+$matteBlue:			rgba(104,135,196,1); //#6887c4
+$matteRoyalBlue:    rgba(69,102,169,1);  //#4566a9
+$purpBlue:			rgba(87,115,172,1);  //#5773AC
+$skyBlue:			rgba(40,160,229,1);  //#28a0e5
+$flattBlue:			rgba(59,72,104,1);   //#3B4868
+
+/* Turquoise */
+$turquoise:			rgba(15,166,188,1); //#0fa6bc
+$lightTurquoise:	rgba(22,203,230,1); //#16cbe6
+
+/* Teal */
+$teal:				rgba(15,166,188,1); //#0fa6bc
+$lightTeal:			rgba(29,193,219,1); //#1dc1da
+
+/* DarkBrown & Black */
+$black:				rgba(0,0,0,1);      //#000000
+$darkBlack:			rgba(17,17,17,1);	//#111111
+$matteBlack:		rgba(33,33,33,1);   //#212121
+
+
+$base-font-size:12;
+$em-base:14px;
+/* 
+ *-------------------------------------------------------------------------------
+ * Fonts available to our project: Droid Sans, Oswald, Open Sans
+ *-------------------------------------------------------------------------------
+ */
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Oswald|Open+Sans);
+
+/*
+ *-------------------------------------------------------------------------------
+ * Third Party Mixin Library stocked full of useful functions and tools.
+ * http://bourbon.io/ for documentation
+ */
+@import "incl/bourbon/bourbon";
+
+/* Custom mixins */
+@import "incl/custom-mixins";

@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><?= (isset($page_title)) ? $page_title : PAGE_TITLE; ?></title>
+    <title><?= (isset($page_title)) ? $page_title : DEFAULT_PAGE_TITLE; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="<?= base_url(); ?>themes/Florum/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <!-- styles -->
-    <link href="<?= base_url(); ?>themes/Florum/css/styles.css" rel="stylesheet">
+    <?php 
+      if(!empty($this->config->item('front_theme_name'))) : 
+    ?>
+        <!-- include custom <?= $this->config->item('front_theme_name'); ?> theme -->
+        <link href="<?= base_url(); ?>themes/<?= $this->config->item('front_theme_name'); ?>/css/min/styles.css" rel="stylesheet">
+    
+    <?php
+      else : 
+    ?>
+        <!-- include custom <?= $this->config->item('default_theme_name'); ?> theme -->
+        <link href="<?= base_url(); ?>themes/<?= $this->config->item('default_theme_name'); ?>/css/min/styles.css" rel="stylesheet">
+
+    <?php endif; ?>
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

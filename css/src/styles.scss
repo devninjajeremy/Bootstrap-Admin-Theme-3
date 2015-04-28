@@ -1,643 +1,563 @@
-@import 'incl/mixins';
-
-$offerWhite:      rgba(247,247,247,1);
-$darkBlue:        rgba(44,55,66,1);
-$whitey:          rgba(255,255,255,1);
-$lightGray:       rgba(238,238,238,1);
-$miderGray:       rgba(136,136,136,1);
-$midGray:         rgba(170,170,170,1);
-$blacky:          rgba(0,0,0,1);
-$lightBlacky:     rgba(33,33,33,1);
-$lightTeal:       rgba(29,193,219,1);
-$teal:            rgba(15,166,188,1);
-$offWhite:        rgba(243,243,243,1);
-$darkGray:        rgba(102,102,102,1);
-$lighterDarkGray: rgba(153,153,153,1);
-$offestWhite:     rgba(252,252,252,1);
-$grayWhite:       rgba(221,221,221,1);
-$paleWhite:       rgba(245,245,245,1);
-$brownGray:       rgba(85,85,85,1);
-$palerWhite:      rgba(239,240,243,1);
-$lighterBlacky:   rgba(34,34,34,1);
-$skyBlue:         rgba(40,160,229,1);
-$purpleBlue:      rgba(87,115,172,1);
-$paleGray:        rgba(178,191,199,1);
-$matteBlue:       rgba(104,135,196,1);
-$royalBlue:       rgba(57,89,159,1);
-$matteRoyalBlue:  rgba(69,102,169,1);
-$palerGray:       rgba(226,226,228,1);
-$turquoise:       rgba(15,166,188,1);
-$lightTurquoise:  rgba(22,203,230,1);
-$darkestGray:     rgba(17,17,17,1);
-$flattRoyalBlue:  rgba(59,72,104,1);
-
-
+// Include the skeleton which includes variables for colors
+@import 'incl/skeleton';
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: $offerWhite;
-  position: relative;
-  margin: 0px;
-  font-size: 12px;
-  padding: 4.167em 0 0 0;
-  a {
-    text-decoration: none;
-    &:hover {
-      text-decoration: none;
-    }
-  }
+  @include background(linear-gradient($white, $lightGray) top repeat);
+  @include position();
+  @include myMargin(0,0,0,0);
+  @include myPadding(0,0,0,0);
 }
 
-.page-content > .row {
-  margin-left: 0px !important;
-  margin-right: 0px !important;
-  margin-top: 2.5em;
-}
-
-/* Footer */
-
-footer {
-  background-color: $darkBlue;
-  box-shadow: inset 0 0 0.250em $darkestGray;
-  color: $whitey;
-  font-size: 1.167em;
-  line-height: 2.083em;
-  padding: 0.833em 0;
-  bottom: 0;
-  a {
-    color: $lightGray;
-    border-bottom: 0.083em dotted $miderGray;
-    &:hover {
-      color: $midGray;
-      border: 0;
-    }
-  }
-  hr {
-    margin:0.833em 0 0.833em 0;
-    +border(0.083em solid $lightBlacky);
-    border-left:none;
-    border-right:none;
-  }
-  .copy {
-    font-size: 1.083em;
-    margin: 1.250em 0;
+.page-content {
+  /* first occurance of the row class */
+  > .row {
+    @include myMargin(rem(30) !important, 0 !important, 0 !important, 0 !important);
   }
 }
-
-/* Logo & Navigation */
 
 .header {
-  height: 4.167em;
-  background-color: $darkBlue;
-  .logo h1 {
-    font-size: 2.500em;
-    margin: 0;
-    padding: 0.833em 0;
-    a {
-      color: $whitey;
-      font-family: 'Open Sans Condensed', sans-serif;
-      &:hover {
-        color: $whitey;
-        border: 0;
-      }
-    }
-  }
-  .form {
-    margin-top: 0.833em;
-    width: 100%;
-    max-width: 25.000em;
-    margin: 0.833em auto;
-  }
-  .navbar {
-    * {
-      box-shadow: none !important;
-    }
-    .label {
-      font-size: 1em;
-      padding: 0.333em 0.667em;
-      margin: 0 0.167em;
-      border-radius: 1.250em !important;
-    }
-    background: none !important;
-    border: 0 !important;
-    i {
-      margin-right: 0.250em;
-    }
-    .nav > li > a {
-      color: $whitey !important;
-      font-size: 1.083em !important;
-      border-bottom: 0 !important;
-      margin-top: 0 !important;
-      font-weight: bold;
-    }
-  }
-  .navbar-nav > .open > a {
-    background: none !important;
-    &:hover, &:focus {
-      background: none !important;
-    }
-  }
-  .navbar-collapse {
-    border: 0 !important;
-  }
-  .navbar-header {
-    width: 3.583em;
-    margin: 0 auto;
-    button {
-      color: $whitey !important;
-      padding: 0.417em 0.833em;
-    }
-  }
-  .navbar-toggle {
-    background-color: $lightTeal !important;
-    border: 0.083em solid $teal !important;
-    &:hover, &:focus {
-      background-color: $teal !important;
-      border: 0.083em solid $teal !important;
-    }
-  }
-  .dropdown-menu {
-    border-radius: 0.500em !important;
-    background: $whitey !important;
-    li {
-      font-size: 1.083em;
-      padding: 0.500em 1.250em;
-      border-bottom: 0.083em dashed $offWhite;
+  background-color:$darkBlue;
+  @include size(null rem(70));
+  .logo {
+
+    h1 {
+      @include font-size(30,$base-font-size);
+      @include myPadding(rem(10),0,rem(10),0);
+      @include myMargin(0,0,0,0);
+
       a {
-        color: $miderGray;
-        padding-left: 0 !important;
-      }
-      &:last-child {
-        border: 0;
-      }
-      a:hover {
-        background: none !important;
-        color: $darkGray !important;
-        border: 0 !important;
-      }
-    }
-  }
-  .dropdown-big {
-    min-width: 25em;
-    .dropdown-head,.dropdown-foot {
-      padding: 0.583em 1.250em;
-      background: $offestWhite;
-      border-bottom: 0.083em solid $grayWhite;
-      margin-top: -0.417em;
-      border-top-left-radius: 0.417em;
-      border-top-right-radius: 0.417em;
-    }
-    .dropdown-title {
-      font-size: 1.083em;
-      font-weight: bold;
-      color: $lighterDarkGray;
-    }
-    .dropdown-body {
-      background: $whitey;
-    }
-    .dropdown-foot {
-      font-size: 1em;
-      a {
-        color: $miderGray;
+        color:$white;
+        font-family:"Oswald",sans-serif;
+
         &:hover {
-          color: $brownGray;
-          border-bottom: 0;
+          color:$white;
+          @include border(none,none,none,none);
+          text-decoration: none;
         }
       }
     }
   }
+
+  .form {
+    @include myMargin(rem(10),auto,rem(10),auto);
+    @include size(100% null);
+    max-width:rem(300);
+  }
+
+  .navbar {
+    background:none !important;
+    @include border(none !important,none !important, none !important, none !important);
+
+    /* All Elements within the navbar class */
+    * {
+      box-shadow:none !important;
+    }
+
+    .label {
+      @include font-size(12,$base-font-size);
+      @include myPadding(rem(4),rem(8),rem(4),rem(8));
+      @include myMargin(0,rem(2),0,rem(2));
+      border-radius:rem(15) !important;
+    }
+
+    i {
+      @include myMargin(false,rem(3),false,false);
+    }
+
+    .nav {
+      > li {
+        > a {
+          color:$white !important;
+          @include font-size(13,$base-font-size, true);
+          @include border(false,false,none !important,none);
+          @include myMargin(0 !important,false,false,false);
+          font-weight:bold;
+        }
+      }
+    }
+  }
+
+  .navbar-nav {
+    > .open {
+      > a,> a:hover,> a:focus {
+        background:none !important;
+      }
+    }
+  }
+
+  .navbar-collapse {border:none !important}
+  .navbar-header {
+    @include size(rem(43) null);
+    @include myMargin(0,auto,0,auto);
+    button {
+      color:$white !important;
+      @include myPadding(rem(5),rem(10),rem(5),rem(10));
+    }
+  }
+
+  .navbar-toggle {
+    background-color:$lightTeal !important;
+    @include border(rem(1) solid $teal !important);
+
+    &:hover,&:focus {
+      background-color:$teal !important;
+      @include border(rem(1) solid $teal !important);
+    }
+  }
+
+  .dropdown-menu {
+    border-radius:rem(6) !important;
+    background-color:$white !important;
+
+    li {
+      @include font-size(13,$base-font-size);
+      @include myPadding(rem(6),rem(15),rem(6),rem(15));
+      @include border(false,false,rem(1) dashed $offerWhite);
+
+      a {
+        color:$midistGray;
+        @include myPadding(null,null,null,0 !important);
+
+        &:hover {
+          background:none !important;
+          color:$midDarkGray !important;
+          @include border(none !important,none !important, none !important, none !important);
+        }
+      }
+
+      &:last-child {
+        @include border(none,none,none,none);
+      }
+    }
+  }
+
+  .dropdown-big {
+    min-width:rem(300);
+    .dropdown-head {
+      @include myPadding(rem(7),rem(15),rem(7),rem(15));
+      @include border(false,false,rem(1) solid $paleGray);
+      @include myMargin(rem(-5),null,null,null);
+      @include border-top-radius(rem(-5));
+      background:$palerWhite;
+    }
+    .dropdown-title {
+      @include font-size(13,$base-font-size);
+      font-weight:bold;
+      color:$midGray;
+    }
+    .dropdown-body {
+      background:$white;
+    }
+    .dropdown-foot {
+      @include myPadding(rem(7),rem(15),rem(7),rem(15));
+      @include border(rem(1) solid $paleGray,false,false,false);
+      @include myMargin(false,false,rem(-5),false);
+      @include border-bottom-radius(rem(5));
+      @include font-size(12,$base-font-size);
+      background:$palerWhite;
+      a {
+        color:$midistGray;
+        &:hover {
+          @include border(false,false,none,false);
+          color:$midDarkerGray;
+        }
+      }
+    }
+  }
+
   .navbar-nav {
     .caret {
-      border-top-color: $whitey !important;
-      border-bottom-color: $whitey !important;
+      border-top-color:$white !important;
+      border-bottom-color:$white !important;
     }
-    > .open > a {
-      .caret, &:hover .caret, &:focus .caret {
-        border-top-color: $whitey !important;
-        border-bottom-color: $whitey !important;
+
+    > .open {
+      > a, > a:hover, > a:focus {
+        .caret {
+          @include border-color($white null $white null);
+        }
       }
     }
   }
 }
 
-/* Sidebar navigation */
+footer {
+  @include box-shadow(0,0,rem(3),$darkBlack,true);
+  @include line-height(25);
+  @include font-size(16,$base-font-size);
+  @include myPadding(rem(10),0,rem(10),0);
+  @include position(relative,null null 0 null);
+  background-color:$darkBlue;
+  color:$white;
 
-.content-box {
-  margin-bottom: 2.500em;
-  background: $whitey;
-  border-radius: 0.833em;
-  padding: 0.833em;
-  +border(0.083em solid $lightGray, 0.167em solid $lightGray, 0.167em solid $lightGray, 0.083em solid $lightGray);
+
+  /* Footer links */
+  a {
+    @include border(false, false, rem(1) dotted $midistGray, false);
+    color: $lightGray;
+
+    &:hover {
+      color: $middleGray;
+      @include border(none,none,none,none);
+    }
+  }
+
+  hr {
+    @include myMargin(rem(10),0,rem(10),0);
+    @include border(rem(1) solid $black,false,rem(1) solid $matteBlack,false);
+  }
+
+  .copy {
+    @include font-size(13,$base-font-size);
+    @include myMargin(rem(15),0,rem(15),0);
+  }
+
+} //end footer
+
+.content-box, .content-box-large {
+  @include myMargin(false,false,rem(30),false);
+    @include myPadding(rem(10),rem(10),rem(10),rem(10));
+    @include border(rem(1) solid $lightGray,rem(2) solid $lightGray,rem(2) solid $lightGray,rem(1) solid $lightGray);
+    background:$white;
+    border-radius:rem(10);
+
 }
-
 .content-box-large {
-  margin-bottom: 2.500em;
-  background: $whitey;
-  border-radius: 0.833em;
-  padding: 0.833em;
-  +border(0.083em solid $lightGray, 0.167em solid $lightGray, 0.167em solid $lightGray, 0.083em solid $lightGray);
-  padding: 1.667em;
+    @include myPadding(rem(20),rem(20),rem(20),rem(20));
 }
 
 .box-with-header {
-  border-top: none;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  @include border(none);
+  @include border-top-radius(0);
 }
 
 .content-box-header {
-  min-height: 3.333em;
-  font-size: 1.333em;
-  background: $paleWhite;
-  border-top-left-radius: 0.417em;
-  border-top-right-radius: 0.417em;
-  padding: 0.833em;
-  +border(0.083em solid $lightGray, 0.167em solid $lightGray);
-  border-bottom:none;
-  &:after {
-    clear: both;
-  }
+   min-height: rem(40);
+   background:$almostWhite;
+   @include border-top-radius(rem(20));
+   @include myPadding(rem(10),rem(10),rem(10),rem(10));
+   @include border(rem(1) solid $lightGray,rem(2) solid $lightGray,false,rem(1) solid $lightGray);
+   @include font-size(16,$base-font-size);
+   &:after {
+    @extend %clearfix;
+   }
 }
 
 .sidebar {
+  ul.nav,ul.nav ul {
+    list-style:none;
+    @include myMargin(0,0,0,0);
+    @include myPadding(0,0,0,0);
+  }
+
   ul.nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      margin: 0;
-      padding: 0;
-      display: none;
+      @include myMargin(0,0,0,0);
+      @include myPadding(0,0,0,0);
+      display:none;
     }
   }
+
   .nav {
-    li {
-      &.open ul {
-        display: block;
-      }
-      a:hover, &.current > a {
-        background: $whitey;
-        color: $brownGray;
-        border-bottom: 0;
-      }
-      &.open > a {
-        background: $whitey;
-        color: $brownGray;
-        border-bottom: 0.083em dashed $lightGray;
-      }
-    }
     > li {
-      margin: 0;
-      border-bottom: 0.083em dashed $lightGray;
+      @include border(false,false,rem(1) dashed $lightGray,false);
       &:last-child {
-        border-bottom: 0;
+        @include border(false,false,none,false);
       }
       li {
-        margin: 0;
+        @include myMargin(0,0,0,0);
         a {
-          padding-left: 2.083em;
+          @include myPadding(false,false,false,rem(25));
         }
       }
-      > {
-        a {
-          font-size: 1.167em;
-          line-height: 1.667em;
-          padding: 1.250em;
-          color: $lighterDarkGray;
-          display: block;
-          font-weight: bold;
-          background: none;
-          border-top: none;
-          font-weight: bold;
-          > i {
-            margin-right: 0.417em;
+      > a {
+        @include font-size(14,$base-font-size);
+        @include line-height(20);
+        @include myPadding(rem(15),rem(15),rem(15),rem(15));
+        @extend %activeHover;
+        display:block;
+        font-weight:bold;
+        background:none;
+        text-decoration: none;
+        > i {
+          @include myMargin(false,rem(5),false,false);
+        }
+      }
+      > ul {
+        > li {
+          > a {
+            @include font-size(13,$base-font-size);
+            @include line-height(20);
+            @include myPadding(rem(8),rem(10),rem(8),rem(40));
+            @extend %activeHover;
+            display:block;
+            text-decoration:none;
+            font-weight:bold;
+            &:hover {
+              @extend %activeHover;
+            }
           }
         }
-        ul > li {
+        > li.active {
           > a {
-            font-size: 1.083em;
-            line-height: 1.667em;
-            padding: 0.667em 0.833em 0.667em 3.333em;
-            color: $lighterDarkGray;
-            background: $whitey;
-            display: block;
-            border-top: 0;
-            font-weight: bold;
-          }
-          &.active > a {
-            background: $whitey;
-            border-top: 0;
-            color: $brownGray;
-          }
-          > a:hover {
-            background: $whitey;
-            color: $brownGray;
-            border-bottom: 0;
+            @extend %activeHover;
           }
         }
       }
     }
+    li {
+      a {
+        &:hover {
+          @extend %activeHover;
+        }
+      }
+    }
+
+    li.open {
+      > a {
+        @extend %activeHover;
+        @include border(false,false,rem(1) dashed $lightGray,false);
+
+        > .caret {
+          @include border(none,rem(4) solid transparent,rem(4) solid $middleGray !important,rem(4) solid transparent);
+        }
+
+        > &:hover {
+          @include border-color(null null $middleGray null);
+        }
+      }
+    }
+
     a {
       .caret {
-        float: right;
-        width: 0;
-        height: 0;
-        display: inline-block;
+        @include border(rem(4) solid $middleGray,rem(4) solid transparent,false,rem(4) solid transparent);
+        @include size(0 0);
+        @include myMargin(rem(8),false,false,rem(2));
+        float:right;
+        display:inline-block;
         vertical-align: top;
-        +border(0.333em solid $midGray);
-        border-bottom:none;
-        content: "";
-        margin:0.667em 0 0 0.167em;
+        content:"";
       }
-      &:hover .caret {
-        border-top-color: $midGray;
-      }
-    }
-    li.open > a {
-      > .caret {
-        +border(0.333em solid $midGray);
-        border-top:none;
-      }
-      &:hover > .caret {
-        border-bottom-color: $midGray;
+      &:hover {
+        .caret {
+          @include border-color($middleGray null null null);
+        }
       }
     }
   }
 }
 
 .login-bg {
-  background: rgba(255, 255, 255, 0);
-  background: linear-gradient(top,rgba(255,255,255,0.3), rgba(255,255,255,0));
-  background-color: $palerWhite;
-  background-repeat: no-repeat;
-  height: 100%;
+  @include fade-bg($transpWhite,$clearWhite,$paleWhite);
+  @include size(null 100%);
 }
-
-body {
-  background-color: $palerWhite;
-}
-
-/** Login & Signup **/
 
 .login-wrapper {
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-align: center;
+  @include position(absolute,null 0 null 0);
+  text-align:center;
+
   .box {
-    margin: 0 auto;
-    padding: 2.500em 0;
-    float: none;
-    @include css3(box-shadow,rgba(0, 0, 0, 0.4) 0 0.083em 0.250em, rgba(0, 0, 0, 0.35) 0 0 0.083em);
-    background: $whitey;
-    @include css3(border-radius,0.500em);
+    @include myMargin(0,auto,0,auto);
+    @include myPadding(rem(30),0,rem(30),0);
+    @include css3(box-shadow,rgba(0,0,0,0.4) 0 rem(1) rem(3), rgba(0,0,0,0.35) 0 0 rem(1));
+    @include css3(border-radius,rem(6));
+    float:none;
+    background:$white;
+
     .content-wrap {
-      width: 82%;
-      margin: 0 auto;
+      @include size(82% null);
+      @include myMargin(0,auto,0,auto);
     }
+
     h6 {
-      text-transform: uppercase;
-      margin-bottom: 2.917em;
-      font-size: 1.500em;
-      font-weight: 600;
+      @include myMargin(null,null,rem(35),null);
+      @include font-size(18,$base-font-size);
+      font-weight:600;
+      text-transform:uppercase;
     }
-    input {
-      &[type="text"], &[type="password"] {
-        font-size: 1.250em;
-        height: 3.333em;
-        margin-bottom: 0.833em;
-        border-color: $paleGray;
-        padding-left: 1em;
-      }
-      &[type="text"]:focus {
-        border: 0.083em solid $skyBlue;
-        outline: none;
-        @include css3(box-shadow,inset 0 0.083em 0.167em $grayWhite,0px 0 0.417em $skyBlue);
-      }
-      &[type="password"] {
-        &:focus {
-          border: 0.083em solid $skyBlue;
-          outline: none;
-          @include css3(box-shadow,inset 0 0.083em 0.167em $grayWhite,0px 0 0.417em $skyBlue);
-        }
-        margin-bottom: 0.833em;
+
+    input[type="text"],input[type="password"] {
+      @include font-size(15,$base-font-size);
+      @include size(null rem(40));
+      @include myMargin(false,false,rem(10),false);
+      @include border-color($blueLightGray $blueLightGray $blueLightGray $blueLightGray);
+      @include myPadding(false,false,false,rem(12));
+
+      &:focus {
+        @include border(rem(1) solid $skyBlue,rem(1) solid $skyBlue,rem(1) solid $skyBlue,rem(1) solid $skyBlue);
+        @include css3(box-shadow,inset 0 rem(1) rem(2) $paleGray,0 0 rem(5) $skyBlue);
+        outline:none;
       }
     }
+
+    input[type="password"] {
+      @include myMargin(false,false,rem(10),false);
+    }
+
     .action {
-      position: relative;
-      top: 2.500em;
-      padding: 1.250em 0;
+      @include position(relative,rem(30) null null null);
+      @include myPadding(rem(15),0,rem(15),0);
     }
+
     .signup {
-      text-transform: uppercase;
-      font-size: 1.083em;
-      padding: 0.583em 2.083em;
-      border-radius: 0.417em;
+      text-transform:uppercase;
+      @include font-size(13,$base-font-size);
+      @include myPadding(rem(7),rem(25),rem(7),rem(25));
+      border-radius:rem(5);
+
     }
-  }
-  .already {
-    margin: 0 auto;
-    float: none;
-    text-align: center;
-    font-size: 1.083em;
-    margin-top: 2.500em;
-    p {
-      display: inline-block;
-      color: $lighterBlacky;
-    }
-    a {
-      color: $lighterBlacky;
-      margin-left: 0.583em;
-      border-bottom: 0.083em solid;
-      &:hover {
-        color: $blacky;
-        border-bottom-color: $blacky;
-      }
-    }
-  }
-  .box {
+
     .social {
-      margin: 0 auto;
-      width: 90%;
+      @include myMargin(0,auto,0,auto);
+      @include size(90% null);
       a.face_login {
-        background: $matteBlue;
-        background: linear-gradient(top, $matteBlue 0%, $matteRoyalBlue 100%);
-        +border(0.083em solid $flattRoyalBlue);
-        border-radius:0.250em;
-        display: inline-block;
-        height: 3.083em;
-        overflow: hidden;
-        width: 99%;
-        text-decoration: none !important;
+        @include background-image(linear-gradient($matteBlue 0%,$matteRoyalBlue 100%));
+        @include border(rem(1) solid $flattBlue,rem(1) solid $flattBlue,rem(1) solid $flattBlue,rem(1) solid $flattBlue);
+        @include border-top-radius(rem(3));
+        @include border-bottom-radius(rem(3));
+        @include size(99% rem(37));
+        display:inline-block;
+        overflow:hidden;
+        text-decoration:none !important;
         &:hover {
-          background: $matteBlue;
-          background: linear-gradient(top, $matteBlue 0%, $purple 100%);
+          @include background-image(linear-gradient($matteBlue 0%,$purpBlue 100%));
         }
-        span {
-          &.face_icon {
-            background-color: $royalBlue;
-            border-radius:0.250em 0 0 0.250em;
-            float: left;
-            height: 3.083em;
-            text-align: center;
-            width: 4.250em;
-            img {
-              margin-top: 0.417em;
-            }
+        span.face_icon {
+          @include border-left-radius(rem(3));
+          @include border-right-radius(0);
+          @include size(rem(51) rem(37));
+          float:left;
+          text-align:center;
+          img {
+            @include myMargin(rem(5),false,false,false);
           }
-          &.text {
-            color: $whitey;
-            float: left;
-            font-size: 1.250em;
-            font-weight: bold;
-            margin: 0.500em 0 0 2.083em;
-            text-shadow: 0.083em 0.083em 0 $royalBlue;
-          }
+        }
+        span.text {
+          color:$white;
+          float:left;
+          font-weight:bold;
+          text-shadow:rem(1) rem(1) 0 $royalBlue;
+          @include font-size(15,$base-font-size);
+          @include myMargin(rem(6),0,0,rem(25));
         }
       }
     }
+
     .division {
-      display: inline-block;
-      margin: 1.417em 0 1.917em;
-      position: relative;
+      @include myMargin(rem(17),0,rem(23),0);
+      @include size(100% null);
+      display:inline-block;
       text-align: center;
-      width: 100%;
+
       hr {
-        border-color: $palerGray;
-        border-width: 0.083em;
-        margin: 0;
-        position: absolute;
-        width: 40%;
-        &.left {
-          top: 1.083em;
-        }
-        &.right {
-          bottom: 0.500em;
-          right: 0;
-        }
+        @include border-color($skyGray $skyGray $skyGray $skyGray);
+        @include border-width(rem(1) rem(1) rem(1) rem(1));
+        @include myMargin(0,0,0,0);
+        @include size(40% null);
+        @include position(absolute);
+      }
+      hr.left {
+        top:rem(13);
+      }
+      hr.right {
+        bottom:rem(6);
+        right:0;
       }
       span {
-        color: $darkGray;
-        font-size: 1.500em;
+        color:$midDarkGray;
+        @include font-size(18,$base-font-size);
+      }
+    }
+  }
+
+  .already {
+    @include myMargin(rem(30),auto,0,auto);
+    @include font-size(13,$base-font-size);
+    float:none;
+    text-align:center;
+    p {
+      display:inline-block;
+      color:$darkerGray;
+    }
+    a {
+      color:$darkerGray;
+      @include myMargin(false,false,false,rem(7));
+      @include border(false,false,rem(1) solid transparent,false);
+      &:hover {
+        color:$black;
+        text-decoration:none;
+        @include border-color(null null $black null);
       }
     }
   }
 }
 
-.panel-heading > .panel-title, .content-box-header .panel-title {
-  float: left;
-  padding: 0.833em 1.250em;
-  padding-top: 0;
+.panel-heading>.panel-title, .content-box-header .panel-title {
+  @include myPadding(0,rem(15),rem(10),rem(15));
+    float: left;
 }
 
-.panel-heading > .panel-title > *, .content-box-header .panel-title > * {
-  margin: 0;
+.panel-heading>.panel-title>*, .content-box-header .panel-title>* {
+  @include myMargin(0,0,0,0);
 }
 
-.panel-heading > .panel-title > span, .content-box-header .panel-title > span {
-  font-weight: normal;
+.panel-heading>.panel-title>span, .content-box-header .panel-title>span {
+    font-weight: normal;
 }
 
-.panel-heading > .panel-options, .content-box-header .panel-options {
-  float: right;
-  padding-right: 1.250em;
+.panel-heading>.panel-options, .content-box-header .panel-options {
+    float: right;
+    @include myPadding(false,rem(15),false,false);
 }
 
-.panel-heading > .panel-options > a, .content-box-header .panel-options > a {
-  margin-top: 0.833em;
+.panel-heading>.panel-options>a, .content-box-header .panel-options>a {
+  @include myMargin(rem(10),false,false,false);
 }
 
-.panel-body {
-  clear: both;
-}
-
-/* Responsive CSS */
-
-/* Mobile phones */
-@media (max-width: 40.000em) {
-  body {
-    padding-top: 17.917em;
-  }
-}
-
-/* Tablets */
-@media (max-width: 63.917em) {
-  body {
-    padding-top: 17.917em;
-  }
-  .container {
-    width: 100%;
-  }
-  .header {
-    height: auto;
-    padding: 1.250em 0;
-    .logo {
-      text-align: center;
-      padding-bottom: 0.833em;
-    }
-    .navbar .nav > li > a:hover {
-      background: $turquoise;
-      border-radius: 0.417em;
-    }
-  }
-  .navbar-toggle {
-    margin-right: 0 !important;
-  }
-}
+.panel-body {clear:both}
 
 /* Desktop */
 
-@media (max-width: 82.583em) {
-  body {
-    padding-top: 17.917em;
-  }
-  .header {
-    height: auto;
-    padding: 1.250em 0;
-    .logo {
-      text-align: center;
-      padding-bottom: 0.833em;
-    }
-    .form {
-      margin: 0.833em auto;
-    }
-  }
-  .sidebar, content-box {
-    margin-bottom: 2.500em;
-    width: 100%;
-    float: none;
-    position: relative;
-  }
-  .mainy {
-    margin-left: 0;
-  }
-  .sidebar-dropdown {
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-    margin-bottom:0.833em;
-    border-bottom: 0.083em dashed $lightGray;
-    padding-bottom: 0.833em;
-    a {
-      color: $whitey;
-      background: $lightTurquoise;
-      display: block;
-      padding: 0.500em 1em;
-      border-bottom: 0;
-      box-shadow: 0 0 0.083em $turquoise;
-      border-radius: 0.830em;
-      &:hover {
-        color: $whitey;
-        background: $lightTurquoise;
-        display: block;
-        padding: 0.500em 1em;
-        border-bottom: 0;
-        box-shadow: 0 0 0.083em $turquoise;
-        border-radius: 0.830em;
+@media (max-width: rem(991)){
+   .header{
+      @include size(null auto);
+      @include myPadding(rem(15),0,rem(15),0);
+      .logo{
+        @include myPadding(false,false,rem(10),false);
+          text-align:center;
+      }
+      
+      .form{
+        @include myMargin(rem(10),auto,rem(10),auto);
       }
     }
+
+   .sidebar, .content-box{
+      @include myMargin(false,false,rem(30),false);
+      @include size(100% null);
+      @include position();
+        float:none;
+   }  
+
+   .mainy{
+      @include myMargin(false,false,false,0);
+   }
+
+   .sidebar-dropdown{
+      @include myMargin(0 auto rem(10) auto);
+      @include border(false,false,rem(1) dashed $lightGray,false);
+      @include myPadding(false,false,rem(10),false);
+        display:block;
+        text-align:center;
+
+     a, a:hover{
+        @include myPadding(rem(6),rem(12),rem(6),rem(12));
+        @include border(false,false,none,false);
+        color:$white;
+        background:$lightTurquoise;
+          display:block;
+          box-shadow:0 0 rem(1) #0fa6bc;
+          border-radius:rem(10);
+     }  
   }
 }

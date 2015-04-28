@@ -1,4 +1,4 @@
-<div class="header navbar-fixed-top">
+<div class="header">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-5">
@@ -19,4 +19,5 @@
 			</div>
 		</div>
 	</div>
+	<div class="clearfix"></div>
 </div>
