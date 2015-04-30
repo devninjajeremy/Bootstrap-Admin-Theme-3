@@ -330,7 +330,7 @@ footer {
 
     a {
       .caret {
-        @include border(rem(4) solid $middleGray,rem(4) solid transparent,false,rem(4) solid transparent);
+        @include border(rem(4) solid $middleGray,rem(4) solid transparent,false,rem(4) solid $white);
         @include size(0 0);
         @include myMargin(rem(8),false,false,rem(2));
         float:right;
@@ -515,6 +515,21 @@ footer {
 }
 
 .panel-body {clear:both}
+
+.companySwitcher {
+  @include padding(rem(10),false,false,false);
+  @media (max-width:rem(991)) {
+    padding-top:rem(5);
+  }
+  .selectedCompany {
+    @include padding(rem(10),false,false,false);
+    color:$white;
+    span.selected {
+      font-weight:bold;
+      color:$teal;
+    }
+  }
+}
 
 /* Desktop */
 

@@ -9,6 +9,7 @@
       if(!empty($this->config->item('front_theme_name'))) : 
     ?>
         <!-- include custom <?= $this->config->item('front_theme_name'); ?> theme -->
+        <link href="<?= base_url(); ?>themes/<?= $this->config->item('front_theme_name'); ?>/css/bootstrap-select.min.css" rel="stylesheet">
         <link href="<?= base_url(); ?>themes/<?= $this->config->item('front_theme_name'); ?>/css/min/styles.css" rel="stylesheet">
     
     <?php
